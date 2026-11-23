@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1f16"/>
+      <stop offset="55%" stop-color="#2c331e"/>
+      <stop offset="100%" stop-color="#0b0c0a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5c400"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="400" fill="url(#bg)"/>
+  <circle cx="150" cy="150" r="95" fill="#f5c400" opacity="0.12"/>
+  <path d="M80 265 L125 120 L175 120 L220 265 Z" fill="#141810" stroke="#f5c400" stroke-width="3"/>
+  <circle cx="150" cy="165" r="32" fill="none" stroke="url(#accent)" stroke-width="5"/>
+  <path d="M150 120 L150 142 M150 188 L150 210 M105 165 L127 165 M173 165 L195 165" stroke="#f5c400" stroke-width="4" stroke-linecap="round"/>
+  <text x="150" y="318" font-family="Arial Black, sans-serif" font-size="22" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1.5">ARENA</text>
+  <text x="150" y="346" font-family="Arial Black, sans-serif" font-size="22" font-weight="900" fill="#f5c400" text-anchor="middle" letter-spacing="1.5">BREAKOUT</text>
+</svg>

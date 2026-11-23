@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 480" width="360" height="480">
+  <defs>
+    <linearGradient id="cocBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1105"/>
+      <stop offset="50%" stop-color="#0d0d12"/>
+      <stop offset="100%" stop-color="#221506"/>
+    </linearGradient>
+    <radialGradient id="cocGlow" cx="50%" cy="42%" r="55%">
+      <stop offset="0%" stop-color="#facc15" stop-opacity="0.45"/>
+      <stop offset="55%" stop-color="#d97706" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#0b0b0b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goldShield" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="45%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="steelBlade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="50%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <linearGradient id="emeraldGem" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="50%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="360" height="480" fill="url(#cocBg)"/>
+  <rect width="360" height="480" fill="url(#cocGlow)"/>
+
+  <!-- Fortress battlements silhouette -->
+  <path d="M0 370 L32 370 L32 340 L60 340 L60 370 L95 370 L95 320 L125 320 L125 350 L235 350 L235 320 L265 320 L265 370 L300 370 L300 340 L328 340 L328 370 L360 370 L360 480 L0 480 Z" fill="#09090b" opacity="0.85"/>
+
+  <!-- Sparks -->
+  <circle cx="72" cy="110" r="3" fill="#fde047" opacity="0.8"/>
+  <circle cx="290" cy="95" r="2.5" fill="#facc15" opacity="0.9"/>
+  <circle cx="255" cy="150" r="2" fill="#fb923c" opacity="0.75"/>
+  <circle cx="98" cy="180" r="2" fill="#fef08a" opacity="0.7"/>
+  <circle cx="310" cy="245" r="3" fill="#facc15" opacity="0.65"/>
+
+  <!-- Crossed Swords -->
+  <g transform="translate(180 205)">
+    <g transform="rotate(-34)">
+      <rect x="-8" y="-135" width="16" height="190" rx="4" fill="url(#steelBlade)"/>
+      <polygon points="0,-155 -8,-135 8,-135" fill="#f8fafc"/>
+      <rect x="-26" y="48" width="52" height="10" rx="5" fill="url(#goldShield)"/>
+      <rect x="-6" y="58" width="12" height="32" rx="3" fill="#78350f"/>
+      <circle cx="0" cy="94" r="9" fill="url(#goldShield)"/>
+    </g>
+    <g transform="rotate(34)">
+      <rect x="-8" y="-135" width="16" height="190" rx="4" fill="url(#steelBlade)"/>
+      <polygon points="0,-155 -8,-135 8,-135" fill="#f8fafc"/>
+      <rect x="-26" y="48" width="52" height="10" rx="5" fill="url(#goldShield)"/>
+      <rect x="-6" y="58" width="12" height="32" rx="3" fill="#78350f"/>
+      <circle cx="0" cy="94" r="9" fill="url(#goldShield)"/>
+    </g>
+  </g>
+
+  <!-- Central Royal Crest Shield -->
+  <g transform="translate(180 212)">
+    <path d="M0 -86 L74 -62 L74 12 C74 62 36 92 0 110 C-36 92 -74 62 -74 12 L-74 -62 Z" fill="#7f1d1d" stroke="url(#goldShield)" stroke-width="10"/>
+    <path d="M0 -72 L60 -52 L60 10 C60 52 28 78 0 94 C-28 78 -60 52 -60 10 L-60 -52 Z" fill="#991b1b"/>
+    <!-- Crown Emblem -->
+    <path d="M-34 8 L-38 -24 L-16 -6 L0 -32 L16 -6 L38 -24 L34 8 Z" fill="url(#goldShield)"/>
+    <rect x="-34" y="12" width="68" height="10" rx="4" fill="url(#goldShield)"/>
+  </g>
+
+  <!-- Floating Clash Gems -->
+  <g transform="translate(92 316) rotate(-14)">
+    <polygon points="0,-24 22,-8 14,22 -14,22 -22,-8" fill="url(#emeraldGem)" stroke="#a7f3d0" stroke-width="2"/>
+    <polygon points="0,-24 10,-4 0,12 -10,-4" fill="#a7f3d0" opacity="0.45"/>
+  </g>
+  <g transform="translate(268 312) rotate(16)">
+    <polygon points="0,-22 20,-7 13,20 -13,20 -20,-7" fill="url(#emeraldGem)" stroke="#a7f3d0" stroke-width="2"/>
+    <polygon points="0,-22 9,-4 0,10 -9,-4" fill="#a7f3d0" opacity="0.45"/>
+  </g>
+
+  <!-- Bottom vignette -->
+  <rect y="360" width="360" height="120" fill="url(#cocGlow)" opacity="0.25"/>
+</svg>

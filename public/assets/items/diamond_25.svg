@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+    <defs>
+      <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6"/>
+        <stop offset="100%" stop-color="#0284c7" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="facet1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#e0f2fe"/>
+        <stop offset="50%" stop-color="#38bdf8"/>
+        <stop offset="100%" stop-color="#0369a1"/>
+      </linearGradient>
+      <linearGradient id="facet2" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#0284c7"/>
+        <stop offset="100%" stop-color="#7dd3fc"/>
+      </linearGradient>
+      <linearGradient id="facetTop" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="100%" stop-color="#bae6fd"/>
+      </linearGradient>
+    </defs>
+    <circle cx="60" cy="65" r="45" fill="url(#glow)"/>
+    <!-- Diamond Body -->
+    <polygon points="40,35 80,35 98,55 60,100 22,55" fill="#0284c7" filter="drop-shadow(0 4px 8px rgba(0,0,0,0.5))"/>
+    <polygon points="40,35 80,35 70,55 50,55" fill="url(#facetTop)"/>
+    <polygon points="22,55 40,35 50,55" fill="url(#facet1)"/>
+    <polygon points="80,35 98,55 70,55" fill="url(#facet2)"/>
+    <polygon points="22,55 50,55 60,100" fill="#0369a1"/>
+    <polygon points="50,55 70,55 60,100" fill="url(#facet1)"/>
+    <polygon points="70,55 98,55 60,100" fill="#0284c7"/>
+    <!-- Facet outlines & sparkles -->
+    <polygon points="50,55 60,100 50,55" stroke="#ffffff" stroke-width="0.5" fill="none"/>
+    <path d="M 60,20 L 62,28 L 70,30 L 62,32 L 60,40 L 58,32 L 50,30 L 58,28 Z" fill="#ffffff" opacity="0.9"/>
+    <path d="M 85,45 L 86,49 L 90,50 L 86,51 L 85,55 L 84,51 L 80,50 L 84,49 Z" fill="#ffffff" opacity="0.8"/>
+  </svg>

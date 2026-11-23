@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+    <defs>
+      <radialGradient id="bonusGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#b45309" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="crateMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#fbbf24"/>
+        <stop offset="50%" stop-color="#d97706"/>
+        <stop offset="100%" stop-color="#78350f"/>
+      </linearGradient>
+    </defs>
+    <circle cx="60" cy="65" r="50" fill="url(#bonusGlow)"/>
+    <!-- Sci-fi Drop Crate -->
+    <rect x="22" y="44" width="76" height="56" rx="6" fill="#1c1917" stroke="url(#crateMetal)" stroke-width="2.5"/>
+    <line x1="22" y1="72" x2="98" y2="72" stroke="#f59e0b" stroke-width="2"/>
+    <line x1="60" y1="44" x2="60" y2="100" stroke="#f59e0b" stroke-width="2"/>
+    <!-- Yellow Caution Stripes -->
+    <rect x="26" y="48" width="8" height="20" fill="#f59e0b" transform="skewX(-20)"/>
+    <rect x="42" y="48" width="8" height="20" fill="#f59e0b" transform="skewX(-20)"/>
+    <rect x="68" y="48" width="8" height="20" fill="#f59e0b" transform="skewX(-20)"/>
+    <rect x="84" y="48" width="8" height="20" fill="#f59e0b" transform="skewX(-20)"/>
+    <!-- Glowing Gem on Top -->
+    <polygon points="45,36 60,20 75,36 60,52" fill="#38bdf8" stroke="#ffffff" stroke-width="1"/>
+    <polygon points="50,34 60,22 70,34 60,46" fill="#ffffff" opacity="0.8"/>
+    <!-- BONUS Stamp Banner -->
+    <rect x="30" y="78" width="60" height="16" rx="3" fill="#dc2626" stroke="#fef08a" stroke-width="1"/>
+    <text x="60" y="90" font-family="Arial, sans-serif" font-weight="900" font-size="9" fill="#ffffff" text-anchor="middle" letter-spacing="1">BONUS</text>
+  </svg>

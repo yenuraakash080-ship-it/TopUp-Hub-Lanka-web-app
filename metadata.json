@@ -1,0 +1,6 @@
+{
+  "name": "TopUp Hub Lanka",
+  "description": "Sri Lanka's trusted Free Fire top-up store featuring instant UID level verification, diamond packs, memberships, and secure eZ Cash payment processing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

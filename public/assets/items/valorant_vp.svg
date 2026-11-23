@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+    <polygon points="60,15 92,45 80,105 40,105 28,45" fill="#dc2626" stroke="#f87171" stroke-width="3" filter="drop-shadow(0 6px 12px rgba(0,0,0,0.6))"/>
+    <polygon points="60,28 82,50 60,95 38,50" fill="#fca5a5"/>
+    <text x="60" y="70" font-family="Arial, sans-serif" font-weight="900" font-size="22" fill="#ffffff" text-anchor="middle">VP</text>
+  </svg>

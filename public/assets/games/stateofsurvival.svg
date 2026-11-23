@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a1215"/>
+      <stop offset="55%" stop-color="#451a1d"/>
+      <stop offset="100%" stop-color="#0c0a0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="400" fill="url(#bg)"/>
+  <circle cx="150" cy="155" r="76" fill="#ef4444" opacity="0.18"/>
+  <circle cx="150" cy="155" r="54" fill="none" stroke="#f5c400" stroke-width="4" stroke-dasharray="18 8"/>
+  <path d="M132 132 L168 132 L150 185 Z" fill="#f5c400"/>
+  <text x="150" y="314" font-family="Arial Black, sans-serif" font-size="21" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1.5">STATE OF</text>
+  <text x="150" y="344" font-family="Arial Black, sans-serif" font-size="22" font-weight="900" fill="#f5c400" text-anchor="middle" letter-spacing="1.5">SURVIVAL</text>
+</svg>

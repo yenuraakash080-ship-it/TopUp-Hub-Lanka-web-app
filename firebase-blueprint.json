@@ -1,0 +1,265 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Authenticated customer profile, reward coins, and wallet metadata.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Firebase Auth UID."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "minLength": 3,
+          "maxLength": 160,
+          "description": "Verified user email address."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "description": "Display name."
+        },
+        "rewardCoins": {
+          "type": "number",
+          "description": "Accumulated loyalty reward coins."
+        },
+        "walletBalanceLKR": {
+          "type": "number",
+          "description": "Prepaid eZ Hub wallet balance in LKR."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server creation timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server update timestamp."
+        }
+      },
+      "required": ["uid", "email", "name", "rewardCoins", "walletBalanceLKR", "createdAt", "updatedAt"]
+    },
+    "TopUpOrder": {
+      "title": "TopUpOrder",
+      "description": "Manual Bank Transfer or eZ Cash top-up order awaiting verification or completed.",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string",
+          "minLength": 5,
+          "maxLength": 32,
+          "pattern": "^#?ORD-[0-9]{4,12}$",
+          "description": "Unique formatted order ID such as #ORD-1024."
+        },
+        "userId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Owner Firebase Auth UID."
+        },
+        "userEmail": {
+          "type": "string",
+          "format": "email",
+          "minLength": 3,
+          "maxLength": 160,
+          "description": "Customer email address."
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Game identifier."
+        },
+        "gameName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "Human-readable game name."
+        },
+        "playerUid": {
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 64,
+          "description": "In-game player UID."
+        },
+        "playerIgn": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "Verified player in-game nickname."
+        },
+        "playerLevel": {
+          "type": "number",
+          "description": "In-game player level."
+        },
+        "packageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Selected package ID."
+        },
+        "packageName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "description": "Selected package summary."
+        },
+        "packageCategory": {
+          "type": "string",
+          "enum": ["regular", "bonus", "membership"],
+          "description": "Package category."
+        },
+        "diamondsCount": {
+          "type": "number",
+          "description": "Total credits or diamonds."
+        },
+        "amountLKR": {
+          "type": "number",
+          "description": "Subtotal in LKR."
+        },
+        "processingFeeLKR": {
+          "type": "number",
+          "description": "Processing fee in LKR."
+        },
+        "totalPaidLKR": {
+          "type": "number",
+          "description": "Total amount paid in LKR."
+        },
+        "paymentMethod": {
+          "type": "string",
+          "enum": ["bank_deposit", "ezcash", "ezcash_credit", "card", "genuine", "redeem_code"],
+          "description": "Payment channel identifier."
+        },
+        "paymentMethodLabel": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "Display label for payment channel."
+        },
+        "transactionReference": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 100,
+          "description": "Transaction reference / RN receipt number."
+        },
+        "whatsappNumber": {
+          "type": "string",
+          "minLength": 7,
+          "maxLength": 20,
+          "description": "Store or buyer WhatsApp number."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending_verification", "processing", "completed", "rejected"],
+          "description": "Verification status of the order."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server creation timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server update timestamp."
+        }
+      },
+      "required": [
+        "orderId",
+        "userId",
+        "userEmail",
+        "gameId",
+        "gameName",
+        "playerUid",
+        "playerIgn",
+        "playerLevel",
+        "packageId",
+        "packageName",
+        "packageCategory",
+        "diamondsCount",
+        "amountLKR",
+        "processingFeeLKR",
+        "totalPaidLKR",
+        "paymentMethod",
+        "transactionReference",
+        "whatsappNumber",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "SavedPlayerUid": {
+      "title": "SavedPlayerUid",
+      "description": "Verified in-game player UID saved under a user's profile.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Owner Firebase Auth UID."
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Game identifier."
+        },
+        "playerUid": {
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 64,
+          "description": "In-game player UID."
+        },
+        "playerIgn": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "Verified in-game nickname."
+        },
+        "playerLevel": {
+          "type": "number",
+          "description": "Verified in-game level."
+        },
+        "server": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60,
+          "description": "Game server / region."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server update timestamp."
+        }
+      },
+      "required": ["userId", "gameId", "playerUid", "playerIgn", "playerLevel", "server", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Private customer profile, coins, and wallet metadata."
+    },
+    "/users/{userId}/savedUids/{savedUidId}": {
+      "schema": { "$ref": "#/entities/SavedPlayerUid" },
+      "description": "User's saved verified player UIDs."
+    },
+    "/orders/{orderId}": {
+      "schema": { "$ref": "#/entities/TopUpOrder" },
+      "description": "Top-up orders placed by authenticated users."
+    }
+  }
+}

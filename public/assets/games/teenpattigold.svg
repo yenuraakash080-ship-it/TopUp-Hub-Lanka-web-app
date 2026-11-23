@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#422006"/>
+      <stop offset="50%" stop-color="#7c2d12"/>
+      <stop offset="100%" stop-color="#140b06"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="400" fill="url(#bg)"/>
+  <rect x="92" y="95" width="76" height="114" rx="10" fill="#fffbeb" stroke="#f5c400" stroke-width="3" transform="rotate(-10 130 152)"/>
+  <rect x="134" y="102" width="76" height="114" rx="10" fill="#ffffff" stroke="#f5c400" stroke-width="3" transform="rotate(10 172 159)"/>
+  <text x="172" y="172" font-family="Georgia, serif" font-size="40" font-weight="900" fill="#dc2626" text-anchor="middle">A</text>
+  <text x="150" y="314" font-family="Arial Black, sans-serif" font-size="22" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">TEEN PATTI</text>
+  <text x="150" y="344" font-family="Arial Black, sans-serif" font-size="24" font-weight="900" fill="#f5c400" text-anchor="middle" letter-spacing="2">GOLD</text>
+</svg>

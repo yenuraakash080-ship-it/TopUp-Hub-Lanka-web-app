@@ -1,0 +1,189 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isVerifiedUser() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isVerifiedUser() && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    function isValidUserProfile(data) {
+      return data.keys().hasAll(['uid', 'email', 'name', 'rewardCoins', 'walletBalanceLKR', 'createdAt', 'updatedAt']) &&
+        data.keys().hasOnly(['uid', 'email', 'name', 'rewardCoins', 'walletBalanceLKR', 'createdAt', 'updatedAt']) &&
+        data.uid is string && data.uid.size() >= 1 && data.uid.size() <= 128 && data.uid.matches('^[a-zA-Z0-9_\\-]+$') &&
+        data.uid == request.auth.uid &&
+        data.email is string && data.email.size() >= 3 && data.email.size() <= 160 &&
+        data.name is string && data.name.size() >= 1 && data.name.size() <= 120 &&
+        data.rewardCoins is number && data.rewardCoins >= 0 && data.rewardCoins <= 10000000 &&
+        data.walletBalanceLKR is number && data.walletBalanceLKR >= 0 && data.walletBalanceLKR <= 100000000 &&
+        data.createdAt is timestamp &&
+        data.updatedAt is timestamp;
+    }
+
+    function isValidSavedPlayerUid(data) {
+      return data.keys().hasAll(['userId', 'gameId', 'playerUid', 'playerIgn', 'playerLevel', 'server', 'updatedAt']) &&
+        data.keys().hasOnly(['userId', 'gameId', 'playerUid', 'playerIgn', 'playerLevel', 'server', 'zoneId', 'updatedAt']) &&
+        data.userId is string && data.userId.size() >= 1 && data.userId.size() <= 128 && data.userId.matches('^[a-zA-Z0-9_\\-]+$') &&
+        data.userId == request.auth.uid &&
+        data.gameId is string && data.gameId.size() >= 1 && data.gameId.size() <= 64 && data.gameId.matches('^[a-zA-Z0-9_\\-]+$') &&
+        data.playerUid is string && data.playerUid.size() >= 4 && data.playerUid.size() <= 64 &&
+        data.playerIgn is string && data.playerIgn.size() >= 1 && data.playerIgn.size() <= 80 &&
+        data.playerLevel is number && data.playerLevel >= 1 && data.playerLevel <= 999 &&
+        data.server is string && data.server.size() >= 1 && data.server.size() <= 60 &&
+        (!('zoneId' in data) || (data.zoneId is string && data.zoneId.size() <= 32)) &&
+        data.updatedAt is timestamp;
+    }
+
+    function isValidOrderCore(data) {
+      return data.keys().hasAll([
+          'orderId', 'userId', 'userEmail', 'gameId', 'gameName',
+          'playerUid', 'playerIgn', 'playerLevel', 'packageId', 'packageName',
+          'packageCategory', 'diamondsCount', 'amountLKR', 'processingFeeLKR',
+          'totalPaidLKR', 'paymentMethod', 'transactionReference',
+          'whatsappNumber', 'status', 'createdAt', 'updatedAt'
+        ]) &&
+        data.keys().hasOnly([
+          'orderId', 'userId', 'userEmail', 'gameId', 'gameName',
+          'playerUid', 'playerIgn', 'playerLevel', 'packageId', 'packageName',
+          'packageCategory', 'diamondsCount', 'amountLKR', 'processingFeeLKR',
+          'totalPaidLKR', 'paymentMethod', 'paymentMethodLabel', 'ezCashNumber',
+          'transactionReference', 'whatsappNumber', 'status', 'verifiedAt',
+          'createdAt', 'updatedAt'
+        ]) &&
+        data.orderId is string && data.orderId.size() >= 5 && data.orderId.size() <= 32 && data.orderId.matches('^#?ORD-[0-9]{4,12}$') &&
+        data.userId is string && data.userId.size() >= 1 && data.userId.size() <= 128 && data.userId.matches('^[a-zA-Z0-9_\\-]+$') &&
+        data.userEmail is string && data.userEmail.size() >= 3 && data.userEmail.size() <= 160 &&
+        data.gameId is string && data.gameId.size() >= 1 && data.gameId.size() <= 64 && data.gameId.matches('^[a-zA-Z0-9_\\-]+$') &&
+        data.gameName is string && data.gameName.size() >= 1 && data.gameName.size() <= 100 &&
+        data.playerUid is string && data.playerUid.size() >= 4 && data.playerUid.size() <= 64 &&
+        data.playerIgn is string && data.playerIgn.size() >= 1 && data.playerIgn.size() <= 80 &&
+        data.playerLevel is number && data.playerLevel >= 1 && data.playerLevel <= 999 &&
+        data.packageId is string && data.packageId.size() >= 1 && data.packageId.size() <= 64 && data.packageId.matches('^[a-zA-Z0-9_\\-]+$') &&
+        data.packageName is string && data.packageName.size() >= 1 && data.packageName.size() <= 200 &&
+        data.packageCategory in ['regular', 'bonus', 'membership'] &&
+        data.diamondsCount is number && data.diamondsCount >= 0 && data.diamondsCount <= 10000000 &&
+        data.amountLKR is number && data.amountLKR > 0 && data.amountLKR <= 10000000 &&
+        data.processingFeeLKR is number && data.processingFeeLKR >= 0 && data.processingFeeLKR <= 1000000 &&
+        data.totalPaidLKR is number && data.totalPaidLKR > 0 && data.totalPaidLKR <= 10000000 &&
+        data.paymentMethod in ['bank_deposit', 'ezcash', 'ezcash_credit', 'card', 'genuine', 'redeem_code'] &&
+        (!('paymentMethodLabel' in data) || (data.paymentMethodLabel is string && data.paymentMethodLabel.size() <= 80)) &&
+        (!('ezCashNumber' in data) || (data.ezCashNumber is string && data.ezCashNumber.size() <= 20)) &&
+        data.transactionReference is string && data.transactionReference.size() >= 3 && data.transactionReference.size() <= 100 &&
+        data.whatsappNumber is string && data.whatsappNumber.size() >= 7 && data.whatsappNumber.size() <= 20 &&
+        data.status in ['pending_verification', 'processing', 'completed', 'rejected'] &&
+        (!('verifiedAt' in data) || (data.verifiedAt is string && data.verifiedAt.size() <= 64)) &&
+        data.createdAt is timestamp &&
+        data.updatedAt is timestamp;
+    }
+
+    match /admins/{adminId} {
+      allow get: if isSignedIn() && isValidId(adminId) && isOwner(adminId);
+      allow read, write: if false;
+    }
+
+    match /users/{userId} {
+      allow get: if isSignedIn() && isValidId(userId) && (isOwner(userId) || isAdmin());
+      allow list: if isSignedIn() && existing().uid == request.auth.uid;
+
+      allow create: if isVerifiedUser() &&
+        isValidId(userId) &&
+        isOwner(userId) &&
+        isValidUserProfile(incoming()) &&
+        incoming().createdAt == request.time &&
+        incoming().updatedAt == request.time;
+
+      allow update: if isVerifiedUser() &&
+        isValidId(userId) &&
+        isValidUserProfile(incoming()) &&
+        incoming().uid == existing().uid &&
+        incoming().createdAt == existing().createdAt &&
+        incoming().updatedAt == request.time &&
+        (
+          isAdmin() ||
+          (
+            isOwner(userId) &&
+            incoming().diff(existing()).affectedKeys().hasOnly(['name', 'email', 'rewardCoins', 'walletBalanceLKR', 'updatedAt'])
+          )
+        );
+
+      allow delete: if false;
+
+      match /savedUids/{savedUidId} {
+        allow get: if isSignedIn() && isValidId(userId) && isValidId(savedUidId) && (isOwner(userId) || isAdmin());
+        allow list: if isSignedIn() && isOwner(userId);
+
+        allow create: if isVerifiedUser() &&
+          isValidId(userId) &&
+          isValidId(savedUidId) &&
+          isOwner(userId) &&
+          isValidSavedPlayerUid(incoming()) &&
+          incoming().updatedAt == request.time &&
+          exists(/databases/$(database)/documents/users/$(userId));
+
+        allow update: if isVerifiedUser() &&
+          isValidId(userId) &&
+          isValidId(savedUidId) &&
+          isOwner(userId) &&
+          isValidSavedPlayerUid(incoming()) &&
+          incoming().userId == existing().userId &&
+          incoming().updatedAt == request.time &&
+          incoming().diff(existing()).affectedKeys().hasOnly(['playerIgn', 'playerLevel', 'server', 'zoneId', 'updatedAt']) &&
+          exists(/databases/$(database)/documents/users/$(userId));
+
+        allow delete: if isVerifiedUser() && isValidId(userId) && isValidId(savedUidId) && isOwner(userId);
+      }
+    }
+
+    match /orders/{orderId} {
+      allow get: if isSignedIn() && isValidId(orderId) && (existing().userId == request.auth.uid || isAdmin());
+      allow list: if isSignedIn() && existing().userId == request.auth.uid;
+
+      allow create: if isVerifiedUser() &&
+        isValidId(orderId) &&
+        isValidOrderCore(incoming()) &&
+        incoming().userId == request.auth.uid &&
+        incoming().status == 'pending_verification' &&
+        incoming().createdAt == request.time &&
+        incoming().updatedAt == request.time;
+
+      allow update: if isVerifiedUser() &&
+        isValidId(orderId) &&
+        isValidOrderCore(incoming()) &&
+        incoming().orderId == existing().orderId &&
+        incoming().userId == existing().userId &&
+        incoming().createdAt == existing().createdAt &&
+        incoming().updatedAt == request.time &&
+        isAdmin() &&
+        incoming().diff(existing()).affectedKeys().hasOnly(['status', 'verifiedAt', 'updatedAt']);
+
+      allow delete: if false;
+    }
+  }
+}

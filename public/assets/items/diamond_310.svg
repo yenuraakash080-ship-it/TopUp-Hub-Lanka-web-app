@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+    <defs>
+      <radialGradient id="glow310" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.5"/>
+        <stop offset="100%" stop-color="#0284c7" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="gem" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f0f9ff"/>
+        <stop offset="40%" stop-color="#38bdf8"/>
+        <stop offset="100%" stop-color="#0284c7"/>
+      </linearGradient>
+    </defs>
+    <circle cx="60" cy="65" r="50" fill="url(#glow310)"/>
+    <!-- Left Gem -->
+    <g transform="translate(18, 45) scale(0.65) rotate(-15)">
+      <polygon points="40,30 80,30 96,48 60,90 24,48" fill="#0284c7"/>
+      <polygon points="40,30 80,30 70,48 50,48" fill="#e0f2fe"/>
+      <polygon points="24,48 40,30 50,48" fill="#38bdf8"/>
+      <polygon points="80,30 96,48 70,48" fill="#0284c7"/>
+      <polygon points="50,48 70,48 60,90" fill="url(#gem)"/>
+      <polygon points="24,48 50,48 60,90" fill="#0369a1"/>
+      <polygon points="70,48 96,48 60,90" fill="#075985"/>
+    </g>
+    <!-- Right Gem -->
+    <g transform="translate(56, 45) scale(0.65) rotate(15)">
+      <polygon points="40,30 80,30 96,48 60,90 24,48" fill="#0284c7"/>
+      <polygon points="40,30 80,30 70,48 50,48" fill="#e0f2fe"/>
+      <polygon points="24,48 40,30 50,48" fill="#38bdf8"/>
+      <polygon points="80,30 96,48 70,48" fill="#0284c7"/>
+      <polygon points="50,48 70,48 60,90" fill="url(#gem)"/>
+      <polygon points="24,48 50,48 60,90" fill="#0369a1"/>
+      <polygon points="70,48 96,48 60,90" fill="#075985"/>
+    </g>
+    <!-- Center Main Gem -->
+    <g transform="translate(32, 25) scale(0.9)">
+      <polygon points="35,25 75,25 94,45 55,92 16,45" fill="#0284c7"/>
+      <polygon points="35,25 75,25 65,45 45,45" fill="#ffffff"/>
+      <polygon points="16,45 35,25 45,45" fill="#bae6fd"/>
+      <polygon points="75,25 94,45 65,45" fill="#38bdf8"/>
+      <polygon points="45,45 65,45 55,92" fill="url(#gem)"/>
+      <polygon points="16,45 45,45 55,92" fill="#0369a1"/>
+      <polygon points="65,45 94,45 55,92" fill="#075985"/>
+      <path d="M 55,15 L 57,22 L 64,24 L 57,26 L 55,33 L 53,26 L 46,24 L 53,22 Z" fill="#ffffff"/>
+    </g>
+  </svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+    <defs>
+      <linearGradient id="vipGold" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#fef08a"/>
+        <stop offset="50%" stop-color="#eab308"/>
+        <stop offset="100%" stop-color="#854d0e"/>
+      </linearGradient>
+    </defs>
+    <!-- Shield Background -->
+    <path d="M 60,18 L 88,32 L 84,72 Q 60,102 60,102 Q 60,102 36,72 L 32,32 Z" fill="#1e1b4b" stroke="url(#vipGold)" stroke-width="3" filter="drop-shadow(0 6px 12px rgba(0,0,0,0.6))"/>
+    <!-- Gold Crown -->
+    <path d="M 46,45 L 50,35 L 60,42 L 70,35 L 74,45 Z" fill="url(#vipGold)"/>
+    <text x="60" y="66" font-family="Arial, sans-serif" font-weight="900" font-size="16" fill="url(#vipGold)" text-anchor="middle" letter-spacing="1">VIP</text>
+    <text x="60" y="78" font-family="Arial, sans-serif" font-weight="800" font-size="7" fill="#38bdf8" text-anchor="middle">OFFICIAL</text>
+  </svg>

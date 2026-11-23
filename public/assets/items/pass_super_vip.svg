@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+    <defs>
+      <linearGradient id="svipFlame" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ef4444"/>
+        <stop offset="50%" stop-color="#f59e0b"/>
+        <stop offset="100%" stop-color="#7f1d1d"/>
+      </linearGradient>
+    </defs>
+    <path d="M 60,14 L 92,30 L 88,74 Q 60,106 60,106 Q 60,106 32,74 L 28,30 Z" fill="#450a0a" stroke="url(#svipFlame)" stroke-width="3.5" filter="drop-shadow(0 8px 16px rgba(0,0,0,0.7))"/>
+    <polygon points="60,25 65,38 78,38 67,46 71,59 60,51 49,59 53,46 42,38 55,38" fill="#fbbf24"/>
+    <text x="60" y="74" font-family="Arial, sans-serif" font-weight="900" font-size="12" fill="#fef08a" text-anchor="middle" letter-spacing="1">SUPER VIP</text>
+    <text x="60" y="86" font-family="Arial, sans-serif" font-weight="800" font-size="7" fill="#fca5a5" text-anchor="middle">ROYAL ELITE</text>
+  </svg>

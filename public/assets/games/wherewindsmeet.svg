@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f292e"/>
+      <stop offset="60%" stop-color="#143a40"/>
+      <stop offset="100%" stop-color="#090d10"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="400" fill="url(#bg)"/>
+  <circle cx="150" cy="135" r="78" fill="#fbbf24" opacity="0.14"/>
+  <circle cx="150" cy="135" r="56" fill="none" stroke="#f5c400" stroke-width="2.5" opacity="0.7"/>
+  <path d="M40 250 Q110 190 165 235 T275 215 L300 300 L0 300 Z" fill="#0b171b"/>
+  <path d="M148 82 L156 218 L142 218 Z" fill="#e2e8f0"/>
+  <rect x="132" y="210" width="36" height="6" rx="2" fill="#f5c400"/>
+  <text x="150" y="318" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1">WHERE WINDS</text>
+  <text x="150" y="348" font-family="Georgia, serif" font-size="24" font-weight="700" fill="#f5c400" text-anchor="middle" letter-spacing="2">MEET</text>
+</svg>

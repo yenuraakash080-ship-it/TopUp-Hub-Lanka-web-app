@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+    <defs>
+      <radialGradient id="pouchGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.7"/>
+        <stop offset="100%" stop-color="#0284c7" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="pouchLeather" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#78350f"/>
+        <stop offset="50%" stop-color="#b45309"/>
+        <stop offset="100%" stop-color="#451a03"/>
+      </linearGradient>
+    </defs>
+    <circle cx="60" cy="65" r="50" fill="url(#pouchGlow)"/>
+    <!-- Bag base -->
+    <ellipse cx="60" cy="85" rx="36" ry="24" fill="url(#pouchLeather)" filter="drop-shadow(0 6px 12px rgba(0,0,0,0.6))"/>
+    <path d="M 28,75 Q 24,55 35,50 Q 60,45 85,50 Q 96,55 92,75 Z" fill="#92400e"/>
+    <!-- Tie string -->
+    <path d="M 34,52 Q 60,56 86,52" stroke="#f59e0b" stroke-width="3" fill="none"/>
+    <circle cx="60" cy="54" r="4" fill="#fbbf24"/>
+    <!-- Overflowing Diamonds on Top -->
+    <polygon points="40,42 55,30 70,42 55,56" fill="#38bdf8" stroke="#bae6fd" stroke-width="0.5"/>
+    <polygon points="50,30 65,18 80,30 65,46" fill="#bae6fd" stroke="#ffffff" stroke-width="0.5"/>
+    <polygon points="25,48 40,36 55,48 40,62" fill="#0284c7" stroke="#7dd3fc" stroke-width="0.5"/>
+    <polygon points="65,40 80,28 95,40 80,54" fill="#0ea5e9" stroke="#bae6fd" stroke-width="0.5"/>
+    <!-- Glistening Sparkle -->
+    <path d="M 65,12 L 67,17 L 72,19 L 67,21 L 65,26 L 63,21 L 58,19 L 63,17 Z" fill="#ffffff"/>
+    <path d="M 88,32 L 89,35 L 92,36 L 89,37 L 88,40 L 87,37 L 84,36 L 87,35 Z" fill="#ffffff"/>
+  </svg>
